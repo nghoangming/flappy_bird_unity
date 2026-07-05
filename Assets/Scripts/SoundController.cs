@@ -3,30 +3,52 @@ using UnityEngine;
 
 public class SoundController : MonoBehaviour
 {
-    public AudioSource dieSound;
-    public AudioSource hitSound;
-    public AudioSource pointSound;
-    public AudioSource swooshSound;
-    public AudioSource wingSound;
+    public static SoundController Instance {get; private set;}
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip dieSound;
+    [SerializeField] private AudioClip hitSound;
+    [SerializeField] private AudioClip pointSound;
+    [SerializeField] private AudioClip swooshSound;
+    [SerializeField] private AudioClip wingSound;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        } else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void playDieSound()
     {
-        dieSound.PlayOneShot(dieSound.clip);
+        playSound(dieSound);
     }
     public void playPointSound()
     {
-        dieSound.PlayOneShot(pointSound.clip);
+        playSound(pointSound);
     }
     public void playHitSound()
     {
-        dieSound.PlayOneShot(hitSound.clip);
+        playSound(hitSound);
     }
     public void playSwooshSound()
     {
-        dieSound.PlayOneShot(swooshSound.clip);
+        playSound(swooshSound);
     }
     public void playWingSound()
     {
-        dieSound.PlayOneShot(wingSound.clip);
+        playSound(wingSound);
+    }
+
+    public void playSound(AudioClip clip)
+    {
+        if (clip == null)
+        {
+            return;   
+        }
+        audioSource.PlayOneShot(clip);
     }
 }

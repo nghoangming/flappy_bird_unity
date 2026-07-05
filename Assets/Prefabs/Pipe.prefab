@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7630916546080640668}
-  - component: {fileID: 1086315784513907173}
   - component: {fileID: 6435002912858423798}
   m_Layer: 0
   m_Name: Pipe
@@ -35,19 +34,6 @@ Transform:
   - {fileID: 250804710502179856}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1086315784513907173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 703159703743926870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bfd2a4f219528c489a274a154ddae38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Pipe
-  speed: 2
 --- !u!61 &6435002912858423798
 BoxCollider2D:
   m_ObjectHideFlags: 0
